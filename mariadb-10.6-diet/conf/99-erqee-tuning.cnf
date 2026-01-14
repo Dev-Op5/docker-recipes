@@ -1,0 +1,27 @@
+[client]
+default-character-set = utf8mb4
+
+
+[mysqld]
+sql_mode = NO_ENGINE_SUBSTITUTION,ERROR_FOR_DIVISION_BY_ZERO
+
+# character-set
+character_set_server = utf8mb4
+collation_server = utf8mb4_unicode_ci
+skip-character-set-client-handshake
+init_connect = 'SET collation_connection=utf8mb4_unicode_ci; SET NAMES utf8mb4;'
+
+# memory diet
+innodb_buffer_pool_size = 128M
+innodb_log_file_size = 64M
+max_connections = 50
+table_open_cache = 200
+
+# adjustment
+performance_schema = OFF
+general_log = 0
+log_warnings = 2
+
+# disable strict SSL connection
+ssl = 0
+require_secure_transport = OFF
