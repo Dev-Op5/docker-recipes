@@ -1,0 +1,22 @@
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: minio-diet
+    restart: unless-stopped
+
+    command: server /data --console-address ":9001"
+
+    ports:
+      - "127.0.0.1:9000:9000"  # S3 API
+      - "127.0.0.1:9001:9001"  # Web Console
+
+    env_file:
+      - ./conf/env
+
+    volumes:
+      - ./data:/data
+
+    deploy:
+      resources:
+        limits:
+          memory: 192M

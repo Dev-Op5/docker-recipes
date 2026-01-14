@@ -1,0 +1,9 @@
+MINIO_ROOT_USER=minioadmin
+MINIO_ROOT_PASSWORD=minioadminpassword
+
+# region & behavior
+MINIO_REGION_NAME=ap-southeast-1
+MINIO_BROWSER=on
+
+# logging minimal
+MINIO_LOG_LEVEL=error
